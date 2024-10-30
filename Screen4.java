@@ -1,3 +1,4 @@
+//import
 package org.appinventor;
 import com.google.appinventor.components.runtime.HandlesEventDispatching;
 import com.google.appinventor.components.runtime.EventDispatcher;
@@ -10,6 +11,7 @@ import com.google.appinventor.components.runtime.VerticalArrangement;
 import com.google.appinventor.components.runtime.CheckBox;
 import com.google.appinventor.components.runtime.Button;
 import android.content.Intent;
+//design for water intake page
 class Screen4 extends Form implements HandlesEventDispatching {
   private VerticalScrollArrangement VerticalScrollArrangement1;
   private Label Spaces1;
@@ -68,23 +70,28 @@ class Screen4 extends Form implements HandlesEventDispatching {
     EventDispatcher.registerEventForDelegation(this, "ChangedEvent", "Changed" );
     EventDispatcher.registerEventForDelegation(this, "ClickEvent", "Click" );
   }
+  //code for water intake
   public boolean dispatchEvent(Component component, String componentName, String eventName, Object[] params){
     if( component.equals(this) && eventName.equals("Initialize") ){
       thisInitialize();
       return true;
     }
+    //code checkbox in waterintake 250ml
     if( component.equals(levelonewaterintake) && eventName.equals("Changed") ){
       levelonewaterintakeChanged();
       return true;
     }
+    //code checkbox in waterintake 500ml
     if( component.equals(leveltwowaterintake) && eventName.equals("Changed") ){
       leveltwowaterintakeChanged();
       return true;
     }
+    //code checkbox in waterintake 750ml
     if( component.equals(levelthreewaterintake) && eventName.equals("Changed") ){
       levelthreewaterintakeChanged();
       return true;
     }
+    //code checkbox in waterintake 1000ml
     if( component.equals(levelfourwaterintake) && eventName.equals("Changed") ){
       levelfourwaterintakeChanged();
       return true;
@@ -95,6 +102,7 @@ class Screen4 extends Form implements HandlesEventDispatching {
     }
     return false;
   }
+//code text for each level water intake
   public void thisInitialize(){
     Label5.Text("Track water intake !");
   }
@@ -110,6 +118,7 @@ class Screen4 extends Form implements HandlesEventDispatching {
   public void levelfourwaterintakeChanged(){
     Label5.Text("Congratulations!!  *\(^o^)/*  " + levelfourwaterintake.Text());
   }
+  //code to menu page
   public void Button1Click(){
     startActivity(new Intent().setClass(this, Screen2.class));
   }
