@@ -1,3 +1,4 @@
+//import
 package org.appinventor;
 import com.google.appinventor.components.runtime.HandlesEventDispatching;
 import com.google.appinventor.components.runtime.EventDispatcher;
@@ -9,6 +10,7 @@ import com.google.appinventor.components.runtime.Label;
 import com.google.appinventor.components.runtime.HorizontalArrangement;
 import com.google.appinventor.components.runtime.Image;
 import android.content.Intent;
+//design for menu
 class Screen2 extends Form implements HandlesEventDispatching {
   private Button ButtonBackToPageOne;
   private VerticalScrollArrangement VerticalScrollArrangement1;
@@ -65,15 +67,18 @@ class Screen2 extends Form implements HandlesEventDispatching {
     ButtonToWaterIntakePage.TextColor(0xFFFFFFFF);
     EventDispatcher.registerEventForDelegation(this, "ClickEvent", "Click" );
   }
+  //button back to first page
   public boolean dispatchEvent(Component component, String componentName, String eventName, Object[] params){
     if( component.equals(ButtonBackToPageOne) && eventName.equals("Click") ){
       ButtonBackToPageOneClick();
       return true;
     }
+    //button to step counter page
     if( component.equals(ButtonToStepCounterPage) && eventName.equals("Click") ){
       ButtonToStepCounterPageClick();
       return true;
     }
+    //button to track water intake page
     if( component.equals(ButtonToWaterIntakePage) && eventName.equals("Click") ){
       ButtonToWaterIntakePageClick();
       return true;
