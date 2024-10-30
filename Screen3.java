@@ -1,3 +1,4 @@
+//import
 package org.appinventor;
 import com.google.appinventor.components.runtime.HandlesEventDispatching;
 import com.google.appinventor.components.runtime.EventDispatcher;
@@ -9,6 +10,7 @@ import com.google.appinventor.components.runtime.Label;
 import com.google.appinventor.components.runtime.Button;
 import com.google.appinventor.components.runtime.Pedometer;
 import android.content.Intent;
+//design for counter step page
 class Screen3 extends Form implements HandlesEventDispatching {
   private Image Image1;
   private HorizontalScrollArrangement HorizontalScrollArrangement1;
@@ -87,6 +89,7 @@ class Screen3 extends Form implements HandlesEventDispatching {
     EventDispatcher.registerEventForDelegation(this, "WalkStepEvent", "WalkStep" );
     EventDispatcher.registerEventForDelegation(this, "ClickEvent", "Click" );
   }
+  //code for step counter page
   public boolean dispatchEvent(Component component, String componentName, String eventName, Object[] params){
     if( component.equals(Pedometer1) && eventName.equals("WalkStep") ){
       Pedometer1WalkStep((int)params[0], ((Float)params[1]).intValue());
@@ -110,6 +113,7 @@ class Screen3 extends Form implements HandlesEventDispatching {
     }
     return false;
   }
+  //code for pedometer walk step sensor
   public void Pedometer1WalkStep(int walkSteps, float distance){
     Label2.Text(walkSteps);
     Label3.Text(String.valueOf(String.valueOf(String.valueOf((0.045 * Integer.valueOf(Label2.Text()))))));
@@ -117,11 +121,14 @@ class Screen3 extends Form implements HandlesEventDispatching {
   public void StartButtonClick(){
     Pedometer1.Start();
   }
+  //button back to menu code
   public void ButtonBackToMenuClick(){
     startActivity(new Intent().setClass(this, Screen2.class));
   }
+  //button to stop step counter
   public void StopButtonClick(){
   }
+  //button to reset step counter
   public void ResetButtonClick(){
   }
 }
