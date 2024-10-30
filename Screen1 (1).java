@@ -1,3 +1,4 @@
+//import 
 package org.appinventor;
 import com.google.appinventor.components.runtime.HandlesEventDispatching;
 import com.google.appinventor.components.runtime.EventDispatcher;
@@ -6,6 +7,7 @@ import com.google.appinventor.components.runtime.Component;
 import com.google.appinventor.components.runtime.Image;
 import com.google.appinventor.components.runtime.Button;
 import android.content.Intent;
+//logo and button design
 class Screen1 extends Form implements HandlesEventDispatching {
   private Image Image1;
   private Button Button1;
@@ -24,6 +26,7 @@ class Screen1 extends Form implements HandlesEventDispatching {
     Button1.TextColor(0xFFFFFFFF);
     EventDispatcher.registerEventForDelegation(this, "ClickEvent", "Click" );
   }
+  //code for button 
   public boolean dispatchEvent(Component component, String componentName, String eventName, Object[] params){
     if( component.equals(Button1) && eventName.equals("Click") ){
       Button1Click();
